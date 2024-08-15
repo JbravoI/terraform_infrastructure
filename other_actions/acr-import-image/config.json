@@ -1,0 +1,32 @@
+{
+    "sourceRepositoryName": "intelinotion",
+    "sourceLoginServer": "intelinotion.azurecr.io", 
+    "sourceServerAdminUser": "intelinotion",
+    "sourceServerPassword": "xmOTXdP=v3UnrnuHtKG6s2l/dqDKfXy2",
+    "sourceImages": [
+        "trust/intelinotion-client-app:sprint-89-beta1",
+        "trust/intelinotion-web-api:sprint-89-beta1",
+        "trust/intelinotion-pleasereview-api:sprint-89-beta1",
+        "trust/intelinotion-notification-service:sprint-89-beta1",
+        "trust/intelinotion-search-api:sprint-89-beta1",
+        "trust/content-processing-api:sprint-89-beta1",
+        "trust/intelinotion-job-api:sprint-89-beta1",
+        "trust/intelinotion-task-management-service:sprint-89-beta1",
+        "trust/intelinotion-auth-api:sprint-89-beta1",
+        "trust/intelinotion-connector-api:sprint-89-beta1",
+        "trust/intelinotion-document-processing-service:sprint-89-beta1",
+        "trust/intelinotion-dossier-service:sprint-89-beta1",
+        "trust/intelinotion-redis:7.0.11-p2",
+        "trust/intelinotion-enterprise-orientdb:3.2.24",
+        "trust/ intelinotion-bot:sprint-89-beta1",
+        "trust/intelinotion-pgadmin4:2023.R3-beta1",
+        "trust/ingress-nginx/controller:v1.9.5",
+        "trust/defaultbackend-amd64:1.5",
+        "trust/ingress-nginx/kube-webhook-certgen:v20231011-8b53cabe0"   
+    ],
+    "targetSubscriptionID":"8b4749c9-a0cb-481c-b4ed-c33dd9821e17",
+    "targetResourceGroup": "dryrun-temi-r1",
+    "targetRepositoryName": "dryruntemicr",
+    "targetImagePrefix":"intelinotion",
+    "targetTenant": "75da2da3-b9ba-4ba3-b665-684c50b867bb"
+}

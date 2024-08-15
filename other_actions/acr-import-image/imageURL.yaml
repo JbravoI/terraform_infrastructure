@@ -1,0 +1,15 @@
+imageURL:
+  intelinotionWebApi: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-web-api:sprint-89-beta1
+  contentProcessingApi: dryruntemicr.azurecr.io/intelinotion/trust/content-processing-api:sprint-89-beta1
+  intelinotionNotificationService: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-notification-service:sprint-89-beta1
+  intelinotionSearchApi: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-search-api:sprint-89-beta1
+  intelinotionClientApp: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-client-app:sprint-89-beta1
+  intelinotionTaskManagementService: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-task-management-service:sprint-89-beta1
+  intelinotionJobApi: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-job-api:sprint-89-beta1
+  intelinotionAuthApi: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-auth-api:sprint-89-beta1
+  intelinotionConnectorApi: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-connector-api:sprint-89-beta1
+  intelinotionDocumentProcessingService: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-document-processing-service:sprint-89-beta1
+  inRedis: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-redis:7.0.11-p2
+  orientdbservice: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-enterprise-orientdb:3.2.24
+  intelinotionDossierService: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-dossier-service:sprint-89-beta1
+  intelinotionPleasereviewApi: dryruntemicr.azurecr.io/intelinotion/trust/intelinotion-pleasereview-api:sprint-89-beta1
