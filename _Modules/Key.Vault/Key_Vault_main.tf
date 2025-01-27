@@ -65,7 +65,7 @@ resource "azurerm_key_vault_access_policy" "managed_identity" {
 }
 
 # data "azuread_service_principal" "sp" {
-#   display_name = "InteliNotion-dev"
+#   display_name = "In-dev"
 # }
 
 resource "azurerm_key_vault_access_policy" "service_principal" {

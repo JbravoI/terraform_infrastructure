@@ -33,7 +33,7 @@ data "azurerm_subscription" "primary" {
 data "azurerm_client_config" "current" {}
 
 data "azuread_service_principal" "service_principal" {
-  display_name = "InteliNotion-dev"
+  display_name = "In-dev"
 }
 
 # resource "azuread_group" "ad_terraform" {

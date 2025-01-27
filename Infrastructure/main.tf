@@ -33,7 +33,7 @@ data "azurerm_subscription" "primary" {
 data "azurerm_client_config" "current" {}
 
 data "azuread_service_principal" "service_principal" {
-  display_name = "InteliNotion-dev"
+  display_name = "In-dev"
 }
 # data "azurerm_service_principal" "service_principal" {
 #   application_id = data.azurerm_client_config.current.client_id
@@ -315,11 +315,7 @@ module "keyVault" {
     IN-CLIENT-SECRET = {
       secret_name  = "IN-CLIENT-SECRET"
       secret_value = var.IN_CLIENT_SECRET
-    }, 
-    INTELINOTION-LICENSE = {
-      secret_name  = "INTELINOTION-LICENSE"
-      secret_value = var.INTELINOTION_LICENSE
-    }, 
+    },
     IN-CONNECTORS = {
       secret_name  = "IN-CONNECTORS"
       secret_value = var.IN_CONNECTORS

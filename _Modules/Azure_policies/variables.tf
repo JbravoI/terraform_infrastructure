@@ -184,14 +184,6 @@ variable "policies" {
       policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/df49d893-a74c-421d-bc95-c663042e5b80"
       description          = "Policy is applied or not"
       display_name         = "Containers should run with a read only root file system"
-    #   parameters           = {
-    #         # "effect": {
-    #         #   "value": "Deny"
-    #         # },
-    #         # "excludedContainers": {
-    #         #   "value": ["content-processing-api","intelinotion-pleasereview-api","intelinotion-document-processing-service","controller","intelinotion-pgadmin","intelinotion-pginit"]
-    #         # }
-    #     }
     }
    
   ]
