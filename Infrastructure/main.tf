@@ -42,17 +42,32 @@ data "azuread_service_principal" "service_principal" {
 ##################
 # Resource Group # #Creation of new Resource Group would be actual code snippet
 ##################
+# Create a new resource group if 'existing_rg' is false
 resource "azurerm_resource_group" "resource_group" {
+  count    = var.existing_rg ? 0 : 1
   name     = "${var.customer_prefix}-${var.environment}-rg"
   location = var.location
 }
+
+# Reference an existing resource group if 'existing_rg' is true
+data "azurerm_resource_group" "resource_group" {
+  count    = var.existing_rg ? 1 : 0
+  name     = var.existing_rg_name
+  location = var.location
+}
+
+# Use the appropriate resource group (new or existing) in other resources
+# locals {
+#   resource_group_name = var.existing_rg
+#     ? (length(data.azurerm_resource_group.resource_group) > 0 ? data.azurerm_resource_group.resource_group[0].name : null)
+#     : (length(azurerm_resource_group.resource_group) > 0 ? azurerm_resource_group.resource_group[0].name : null)
+# }
 
 ######################
 # Role Assignment    #
 #####################
 module "role_assignment" {
   source = "../_Modules/role_assignment"
-  # name     = is the variabke file of the module
   rg_name              = azurerm_resource_group.resource_group.name
   service_principal    = data.azuread_service_principal.service_principal.object_id
   Containerreg_id      = module.container-registry.Container_registry_id
@@ -178,7 +193,7 @@ module "postgresql" {
 module "storage_Account" {
   source                   = "../_Modules/Storage.Account"
   rg_name                  = azurerm_resource_group.resource_group.name
-  name                     = "inteli${var.customer_prefix}${var.environment}sa222"
+  name                     = "${var.customer_prefix}${var.environment}${random_string.suffix.result}sa"
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
   account_kind             = "StorageV2"
@@ -205,6 +220,16 @@ module "az-log-analytics" {
   depends_on = [azurerm_resource_group.resource_group]
 }
 
+######################
+# Application Insight #
+######################
+module "application-insights" {
+  source           = "../_Modules/AppInsight"
+  AppInsight_name  = "${var.customer_prefix}-${var.environment}-ap"
+  logAnalytics_id  = module.az-log-analytics.log_analytics_id
+  rg_name          = azurerm_resource_group.resource_group.name
+  application_type = "web"
+}
 
 ##################
 # Search Service #

@@ -7,13 +7,33 @@ variable "customer_prefix" {
   description = "Prefix name for the customer or client"
   default     = "terra"
 }
+variable "existing_rg_name" {
+  description = "Prefix name for the customer or client"
+  default     = "terra"
+}
+variable "existing_rg" {
+  description = "Set to true if you want to use an existing resource group, otherwise false to create a new one."
+  type        = bool
+  default     = false
+}
 variable "location" {
   description = "Azure Region location for deployment of resources"
-  default     = "east us"
+  type        = string
+  default     = "eastus"
+
+  validation {
+    condition     = contains(["eastus", "westus", "centralus", "northcentralus", "southcentralus", "eastus2", "westus2", "westus3", "australiaeast", "australiasoutheast", "canadacentral", "canadaeast", "japaneast", "japanwest", "uksouth", "ukwest", "francecentral", "germanywestcentral", "norwayeast", "swedencentral", "switzerlandnorth", "uaenorth", "brazilsouth", "brazilsoutheast", "southafricanorth", "southafricawest", "koreacentral", "koreasouth", "indiaeast", "indiacentral", "indiabangalore"], var.location)
+    error_message = "Invalid Azure location. Please choose from the allowed list of regions."
+  }
 }
 variable "environment" {
-  description = "Environment tag value"
+  description = "Azure Subscription for deployment of resources"
   default     = "dev"
+
+  validation {
+    condition     = contains(["dev", "pilot", "prod"], var.environment)
+    error_message = "Invalid Azure Subscription. Please choose from the allowed list of Subscription."
+  }
 }
 variable "managed_identity" {
   description = "Manage Identity name"
@@ -21,7 +41,7 @@ variable "managed_identity" {
 }
 variable "user_objectid" {
   description = "User Email Address"
-  default     = ".com#EXT#@dev.onmicrosoft.com" #"ttiamiyu@arborsys.com"
+  default     = ".com#EXT#@dev.onmicrosoft.com" 
 }
 
 
