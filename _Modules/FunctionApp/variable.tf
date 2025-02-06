@@ -16,23 +16,23 @@ variable "tags" {
 # Funtion App #
 ################
 variable "appserviceplan_sku" {
-  default = "Standard"
+  default = "temp"
 }
 variable "appserviceplan_size" {
-  default = "S1"
+  default = "temp"
 }
 variable "funtion_app_name" {
   default = "temp"
 }
 variable "dotnet_framework_version" {
-  default = "v4.0"
+  default = "temp"
 }
 variable "scm_type" {
-  default = "LocalGit"
+  default = "temp"
 }
 variable "account_tier" {
-  default = "Standard"
+  default = "temp"
 }
 variable "account_replication_type" {
-  default = "LRS"
+  default = "temp"
 }

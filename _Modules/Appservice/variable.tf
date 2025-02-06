@@ -16,17 +16,17 @@ variable "tags" {
 # AppService #
 ################
 variable "appserviceplan_sku" {
-  default = "Standard"
+  default = "temp"
 }
 variable "appserviceplan_size" {
-  default = "S1"
+  default = "temp"
 }
 variable "appservice_name" {
   default = "temp"
 }
 variable "dotnet_framework_version" {
-  default = "v4.0"
+  default = "temp"
 }
 variable "scm_type" {
-  default = "LocalGit"
+  default = "temp"
 }
